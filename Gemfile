@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'dicer', path: '../..'
+gem 'dicer', git: 'git://github.com/rosylilly/dicer.git'
 
 gem 'sqlite3'
 
