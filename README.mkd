@@ -1,0 +1,15 @@
+# Dicer Example Rails application
+
+[Dicer](https://github.com/rosylilly/dicer) のサンプルアプリケーションです。
+
+## Run application
+
+```shell
+$ git clone git://github.com/rosylilly/dicer-example.git
+$ cd dicer-example
+$ bundle install
+$ npm install -g bower
+$ bundle exec rake bower:install
+$ bundle exec rake db:migrate
+$ bundle exec rails server
+```
