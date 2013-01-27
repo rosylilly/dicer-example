@@ -1,6 +1,28 @@
-h1= @item.title
-p create at #{@item.created_at}
+- content_for :css do
+  = stylesheet_link_tag 'items'
 
-p Bottom Price: #{@item.bottom_price}
+.row
+  .span4
+    h1= @item.title
+    p create at #{@item.created_at}
 
-.description= @item.description
+    p Bottom Price: #{@item.bottom_price}
+
+    .description= @item.description
+  .span8
+    h3 Bids
+
+    - if @item.active?
+      #bid.well
+        = form_tag bid_item_path(@item) do
+          .input-append
+            = number_field_tag :price, @item.lower_bid_price
+            = submit_tag 'Bid!', class: 'btn btn-primary'
+
+    ol
+      - @item.bids.each do |bid|
+        li
+          = bid.price
+          | -
+          = bid.user.name
+

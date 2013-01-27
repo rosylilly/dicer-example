@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/rosylilly/dicer.git
-  revision: ad3abd10b4e8c29ffc001142ad408d62fe4a0438
+PATH
+  remote: ../dicer
   specs:
     dicer (0.2.0)
 

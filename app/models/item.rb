@@ -10,4 +10,8 @@ class Item < ActiveRecord::Base
   def active?
     self.period_at >= Time.now
   end
+
+  def lower_bid_price
+    bids.maximum(:price) || self.bottom_price
+  end
 end

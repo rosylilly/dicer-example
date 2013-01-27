@@ -8,5 +8,9 @@ Auction::Application.routes.draw do
 
   resources :users, only: [:show, :create]
 
-  resources :items
+  resources :items do
+    member do
+      post 'bid' => 'bids#bid'
+    end
+  end
 end
